@@ -1,0 +1,18 @@
+#/bin/sh
+# run as root - device files
+set -e
+set -x
+
+mkdir extract
+cd extract
+
+abootimg -x ../kernel.img.orig
+
+mkdir initrd
+cd initrd
+cp -a ../../files/* .
+cpio -i < ../initrd.img
+find . | cpio -o -H newc > ../myinitrd.img
+
+cd ..
+abootimg --create kernel.img -f bootimg.cfg -k zImage -r myinitrd.img
