@@ -508,6 +508,14 @@ systemctl enable kodi-chroot
 ```
 
 ## Unresolved issues
+
+### RAID
+
+With old 4.9.113 kernel `dm-raid` 1.9.1 seems to prevent suspend.
+Sometimes even assembled array seems to prevent successful suspend but
+mounted `raid` seems to break it always.  Newer 4.9 with 1.9.1 did not
+have this issue so it might be fixable.
+
 ### TV compatibility
 
 On one TV everything works ok and on another it's black screen (and no sound)

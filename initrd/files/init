@@ -275,6 +275,10 @@ mount_sysroot() {
 #  else
 #    mount_part "/flash/$IMAGE_SYSTEM" "/sysroot" "ro,loop"
 #  fi
+# option seems to be ignored!
+insmod /modules/md-mod.ko start_ro=1
+insmod /modules/raid1.ko
+mdadm --assemble --scan
 mount "$root" /sysroot
 
   if [ -f /flash/post-sysroot.sh ]; then

@@ -15,4 +15,5 @@ cpio -i < ../initrd.img
 find . | cpio -o -H newc > ../myinitrd.img
 
 cd ..
+sed -i 's/0x147a800/0x1537000/' bootimg.cfg
 abootimg --create kernel.img -f bootimg.cfg -k zImage -r myinitrd.img
