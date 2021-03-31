@@ -270,7 +270,8 @@ netcat wayland-protocols wipe lsb-release meson nasm ninja-build python3-dev
 python3-pil python3-minimal rapidjson-dev:armhf swig unzip uuid-dev:armhf yasm
 zip zlib1g-dev:armhf libcap2-dev:armhf ccache libinput-dev:armhf
 libdav1d-dev:armhf clang-format libunistring-dev:armhf libpython3.9-dev:armhf
-libiso9660++-dev:armhf ```
+libiso9660++-dev:armhf
+```
 
 (This includes `libsmbclient`!) Dependencies I used for `arm64` build
 (depending on build options some may be unused):
@@ -293,7 +294,10 @@ libvdpau-dev libvorbis-dev libxkbcommon-dev libxmu-dev libxrandr-dev
 libxslt1-dev libxt-dev waylandpp-dev netcat wayland-protocols wipe lsb-release
 meson nasm ninja-build python3-dev python3-pil python3-minimal rapidjson-dev
 swig unzip uuid-dev yasm zip zlib1g-dev libcap2-dev ccache libinput-dev
-libdav1d-dev clang-format libunistring-dev ```
+libdav1d-dev clang-format libunistring-dev
+```
+
+Install dependencies and prepare to build:
 
 ```
 apt install `cat DEPS.install`
